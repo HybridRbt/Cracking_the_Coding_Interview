@@ -33,7 +33,7 @@ public:
 		int n2 = convertToBase(hex, 16);
 
 		// debug use
-		// cout << n1 << " " << n2 << endl;
+        cout << n1 << " " << n2 << endl;
 
 		if (n1 < 0 || n2 < 0) {
 			return false;
