@@ -5,9 +5,9 @@ using namespace std;
 
 class Solution { 
 public:
-	void removeDuplicate(List list) {
-		Node *pre = list.Head();
-		if (pre == NULL || pre->Next() == NULL) {
+    void removeDuplicate(List list) {
+        Node *pre = list.Head();
+        if (pre == NULL || pre->Next() == NULL) {
 			return;
 		}
 

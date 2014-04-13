@@ -6,31 +6,43 @@
 #include "2_list.h"
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-	vector<vector<TreeNode *> > linked_list_from_tree(TreeNode *root) {
-		vector<vector<TreeNode *> > res;
-		if (!root) { return res; }
+    vector<vector<TreeNode *> > linked_list_from_tree(TreeNode *root)
+    {
+        vector<vector<TreeNode *> > res;
+		
+        if (!root) { return res; }
 
-		vector<TreeNode *> cur;
-		cur.push_back(root);
-		res.push_back(cur);
+        vector<TreeNode *> cur;
+        cur.push_back(root);
+        res.push_back(cur);
 
-		while (1) {
-			cur.clear();
+        while (1)
+        {
+            cur.clear();
 
-			for (int i = 0; i < res.back().size(); ++i) {
-				if ( res.back()[i]->left ) { cur.push_back(res.back()[i]->left); }
-				if ( res.back()[i]->right ) { cur.push_back(res.back()[i]->right); }
-			}
+            for (int i = 0; i < res.back().size(); ++i)
+            {
+                if ( res.back()[i]->left )
+                {
+                    cur.push_back(res.back()[i]->left);
+                }
+                
+                if ( res.back()[i]->right )
+                {
+                    cur.push_back(res.back()[i]->right);
+                }
+            }
 
-			if (cur.size() == 0) { break; }
+            if (cur.size() == 0) { break; }
 
-			res.push_back(cur);
-		}
+            res.push_back(cur);
+        }
 
-		return res;
-	}
+        return res;
+    }
 
 	vector<List> linked_list_from_tree1(TreeNode *root) {
 		vector<List> res;
